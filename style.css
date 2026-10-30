@@ -1038,7 +1038,7 @@ html:not(.js) .nav-toggle {
 
 @media (min-width: 800px) {
   .catering-inner {
-    grid-template-columns: 1fr 1.1fr;
+    grid-template-columns: 1.1fr 1fr;
     gap: 4rem;
   }
 }
