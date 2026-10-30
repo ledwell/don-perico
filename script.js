@@ -56,8 +56,13 @@ if (chips.length && 'IntersectionObserver' in window) {
 }
 
 // Home page: "Open now" status and today's special, based on Bakersfield time
-const OPEN_HOUR = 10;
+// Opening hour by day (0 = Sunday); 10am unless listed. Closes at 9pm every day.
+const OPEN_HOURS = { 0: 8 };
+const DEFAULT_OPEN_HOUR = 10;
 const CLOSE_HOUR = 21;
+
+const openHour = (day) => OPEN_HOURS[day] ?? DEFAULT_OPEN_HOUR;
+const formatHour = (h) => `${h % 12 || 12}${h < 12 ? 'am' : 'pm'}`;
 
 const status = document.querySelector('[data-open-status]');
 const todayLink = document.querySelector('[data-today-link]');
@@ -77,15 +82,17 @@ if (status || todayLink) {
   const hour = Number(parts.hour);
 
   if (status) {
-    const state = hour < OPEN_HOUR ? 'before' : hour < CLOSE_HOUR ? 'open' : 'after';
-    status.textContent = status.dataset[state];
+    const state = hour < openHour(day) ? 'before' : hour < CLOSE_HOUR ? 'open' : 'after';
+    const nextOpen = openHour(state === 'after' ? (day + 1) % 7 : day);
+    status.textContent = status.dataset[state].replace('{open}', formatHour(nextOpen));
     status.classList.add(`is-${state}`);
     status.hidden = false;
   }
 
-  // Specials are marked up with data-day (0 = Sunday); reuse their text so translations follow
+  // Specials are marked up with data-day (0 = Sunday); data-until hides one after that hour
   const special = document.querySelector(`[data-day="${day}"]`);
-  if (todayLink && special) {
+  const stillOn = special && !(special.dataset.until && hour >= Number(special.dataset.until));
+  if (todayLink && stillOn) {
     const label = todayLink.querySelector('.hero-today-label').textContent;
     const text =
       special.dataset.today ||

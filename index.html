@@ -38,8 +38,13 @@
     },
     "openingHoursSpecification": [{
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
       "opens": "10:00",
+      "closes": "21:00"
+    }, {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Sunday",
+      "opens": "08:00",
       "closes": "21:00"
     }],
     "foundingDate": "1998",
@@ -88,7 +93,7 @@
         <div class="hero-text">
           <!-- Filled in by script.js from the current Bakersfield time -->
           <div class="hero-live">
-            <p class="hero-status" data-open-status data-open="Open now · closes 9pm" data-before="Opens today at 10am" data-after="Closed · opens tomorrow at 10am" hidden></p>
+            <p class="hero-status" data-open-status data-open="Open now · closes 9pm" data-before="Opens today at {open}" data-after="Closed · opens tomorrow at {open}" hidden></p>
             <a class="hero-today" data-today-link hidden><span class="hero-today-label">Today</span> <span data-today-text></span></a>
           </div>
           <p class="eyebrow">Family-owned since 1998</p>
@@ -205,7 +210,7 @@
     </section>
 
     <!-- TODO: add the buffet price to the ticket once known -->
-    <section id="brunch" class="brunch" aria-labelledby="brunch-title" data-day="0" data-today="Sunday Brunch Buffet, all day">
+    <section id="brunch" class="brunch" aria-labelledby="brunch-title" data-day="0" data-today="Sunday Brunch Buffet, 8am – 2pm" data-until="14">
       <div class="container brunch-inner">
         <div class="brunch-text">
           <p class="eyebrow">Every Sunday</p>
@@ -219,9 +224,9 @@
         </div>
         <div class="brunch-ticket">
           <p class="brunch-ticket-label">Brunch buffet</p>
-          <p class="brunch-price">All Day</p>
+          <p class="brunch-price brunch-price-hours">8am – 2pm</p>
           <p class="brunch-per">every Sunday</p>
-          <p class="brunch-hours"><strong>One set price</strong><br>Full menu available too</p>
+          <p class="brunch-hours"><strong>One set price</strong><br>Full menu available all day</p>
         </div>
       </div>
     </section>
@@ -302,7 +307,7 @@
               </div>
               <div>
                 <dt>Hours</dt>
-                <dd>Open every day: 10am – 9pm<br>Sunday brunch buffet all day, full menu available</dd>
+                <dd>Mon–Sat: 10am – 9pm<br>Sunday: 8am – 9pm<br>Sunday brunch buffet 8am – 2pm</dd>
               </div>
               <div>
                 <dt>Phone</dt>
@@ -329,7 +334,7 @@
       <div>
         <p class="footer-name">Don Perico Mexican &amp; Seafood Restaurant</p>
         <p>4701 White Lane, Bakersfield, CA 93313 · <a href="tel:+16618323002">(661) 832-3002</a></p>
-        <p>Open every day 10am – 9pm · Sunday brunch buffet all day</p>
+        <p>Mon–Sat 10am – 9pm · Sunday 8am – 9pm · Sunday brunch 8am – 2pm</p>
       </div>
       <ul class="footer-links">
         <li><a href="menu.html">Menu</a></li>

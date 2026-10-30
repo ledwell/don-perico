@@ -902,6 +902,11 @@ html:not(.js) .nav-toggle {
   line-height: 1;
 }
 
+.brunch-price-hours {
+  font-size: clamp(2.2rem, 7vw, 2.75rem);
+  white-space: nowrap;
+}
+
 .brunch-per {
   font-family: var(--font-serif);
   font-size: 1.1rem;
