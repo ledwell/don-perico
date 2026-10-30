@@ -10,9 +10,11 @@
   <meta property="og:type" content="restaurant">
   <meta property="og:title" content="Don Perico Mexican &amp; Seafood Restaurant">
   <meta property="og:description" content="Family-owned Mexican &amp; seafood restaurant in Bakersfield since 1998.">
-  <meta property="og:image" content="images/og-image.jpg">
+  <meta property="og:image" content="https://ledwell.github.io/don-perico/images/og-image.jpg">
   <meta name="twitter:card" content="summary_large_image">
 
+  <link rel="alternate" hreflang="en" href="https://ledwell.github.io/don-perico/">
+  <link rel="alternate" hreflang="es" href="https://ledwell.github.io/don-perico/es/">
   <link rel="icon" href="images/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,7 +29,7 @@
     "name": "Don Perico Mexican & Seafood Restaurant",
     "servesCuisine": ["Mexican", "Seafood"],
     "priceRange": "$$",
-    "telephone": "+1-661-555-0100",
+    "telephone": "+1-661-832-3002",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "4701 White Lane",
@@ -51,7 +53,6 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- TODO: replace placeholder phone (661) 555-0100 everywhere (index.html, menu.html, JSON-LD) -->
   <header class="site-header">
     <a class="logo" href="index.html" aria-label="Don Perico Mexican &amp; Seafood Restaurant home">
       <span class="logo-text">
@@ -68,12 +69,13 @@
       <ul class="nav-primary">
         <li><a href="menu.html">MENU</a></li>
         <li><a href="#visit">LOCATIONS</a></li>
+        <li><a class="nav-lang" href="es/index.html" hreflang="es" lang="es">ESPAÑOL</a></li>
       </ul>
       <ul class="nav-secondary">
         <li><a href="#brunch">SUNDAY BRUNCH</a></li>
         <li><a href="#specials">WEEKLY SPECIALS</a></li>
         <li><a href="#our-story">OUR HISTORY</a></li>
-        <li><a href="tel:+16615550100">ORDER TAKEOUT <span class="nav-phone">(661) 555-0100</span></a></li>
+        <li><a href="tel:+16618323002">ORDER TAKEOUT <span class="nav-phone">(661) 832-3002</span></a></li>
       </ul>
     </nav>
   </header>
@@ -86,12 +88,17 @@
       </picture>
       <div class="hero-content">
         <div class="hero-text">
+          <!-- Filled in by script.js from the current Bakersfield time -->
+          <div class="hero-live">
+            <p class="hero-status" data-open-status data-open="Open now · closes 9pm" data-before="Opens today at 10am" data-after="Closed · opens tomorrow at 10am" hidden></p>
+            <a class="hero-today" data-today-link hidden><span class="hero-today-label">Today</span> <span data-today-text></span></a>
+          </div>
           <p class="eyebrow">Family-owned since 1998</p>
           <h1>Proudly serving Bakersfield</h1>
           <p class="hero-lede">Scratch-made Mexican food, sizzling fajitas, fresh seafood and margaritas on White Lane.</p>
           <div class="btn-row">
-            <a href="tel:+16615550100" class="btn btn-primary">Order now</a>
-            <a href="#visit" class="btn btn-outline">Learn more</a>
+            <a href="https://www.google.com/maps/dir/?api=1&amp;destination=4701+White+Lane+Bakersfield+CA+93313" class="btn btn-primary" target="_blank" rel="noopener">Get directions</a>
+            <a href="menu.html" class="btn btn-outline">View the menu</a>
           </div>
         </div>
         <picture class="hero-logo">
@@ -165,19 +172,19 @@
         <h2 id="specials-title" class="specials-title">Weekly specials</h2>
         <ul class="specials-list">
           <li>
-            <a class="special special-green" href="menu.html#fajitas">
+            <a class="special special-green" href="menu.html#fajitas" data-day="1">
               <span class="special-day">Fajita Monday</span>
               <span class="special-deal">30% off all fajitas</span>
             </a>
           </li>
           <li>
-            <a class="special special-red" href="menu.html#tacos">
+            <a class="special special-red" href="menu.html#tacos" data-day="2">
               <span class="special-day">Taco Tuesday</span>
               <span class="special-deal">4 street tacos for $6</span>
             </a>
           </li>
           <li>
-            <a class="special special-blue" href="menu.html#burritos">
+            <a class="special special-blue" href="menu.html#burritos" data-day="4">
               <span class="special-day">Burrito Thursday</span>
               <span class="special-deal">Specialty burrito, rice &amp; beans $12 <small>+ tax</small></span>
             </a>
@@ -187,7 +194,7 @@
     </section>
 
     <!-- TODO: add the buffet price to the ticket once known -->
-    <section id="brunch" class="brunch" aria-labelledby="brunch-title">
+    <section id="brunch" class="brunch" aria-labelledby="brunch-title" data-day="0" data-today="Sunday Brunch Buffet, all day">
       <div class="container brunch-inner">
         <div class="brunch-text">
           <p class="eyebrow">Every Sunday</p>
@@ -196,7 +203,7 @@
           <p>Rather order off the menu? Our full menu is available on Sundays too.</p>
           <div class="btn-row">
             <a href="#visit" class="btn btn-primary">Plan your visit</a>
-            <a href="tel:+16615550100" class="btn btn-outline">Call us</a>
+            <a href="tel:+16618323002" class="btn btn-outline">Call us</a>
           </div>
         </div>
         <div class="brunch-ticket">
@@ -238,6 +245,17 @@
       </div>
     </section>
 
+    <section id="parties" class="parties" aria-labelledby="parties-title">
+      <div class="container parties-inner">
+        <div>
+          <p class="eyebrow">Parties &amp; groups</p>
+          <h2 id="parties-title">Celebrate with us</h2>
+          <p>Birthdays, graduations, office lunches, family get-togethers. Call ahead and tell us how many are coming, and we'll have your tables ready.</p>
+        </div>
+        <a class="btn btn-primary" href="tel:+16618323002">Call (661) 832-3002</a>
+      </div>
+    </section>
+
     <section id="visit" class="section visit" aria-labelledby="visit-title">
       <div class="container">
         <div class="section-head">
@@ -265,12 +283,12 @@
               </div>
               <div>
                 <dt>Phone</dt>
-                <dd><a href="tel:+16615550100">(661) 555-0100</a></dd>
+                <dd><a href="tel:+16618323002">(661) 832-3002</a></dd>
               </div>
             </dl>
             <div class="btn-row">
               <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&amp;destination=4701+White+Lane+Bakersfield+CA+93313" target="_blank" rel="noopener">Get directions</a>
-              <a class="btn btn-outline" href="tel:+16615550100">Call to order</a>
+              <a class="btn btn-outline" href="tel:+16618323002">Call to order</a>
             </div>
           </div>
 
@@ -287,17 +305,34 @@
       <img class="footer-logo" src="images/logo-sm.png" alt="" width="200" height="219" loading="lazy">
       <div>
         <p class="footer-name">Don Perico Mexican &amp; Seafood Restaurant</p>
-        <p>4701 White Lane, Bakersfield, CA 93313 · <a href="tel:+16615550100">(661) 555-0100</a></p>
+        <p>4701 White Lane, Bakersfield, CA 93313 · <a href="tel:+16618323002">(661) 832-3002</a></p>
         <p>Open every day 10am – 9pm · Sunday brunch buffet all day</p>
       </div>
       <ul class="footer-links">
         <li><a href="menu.html">Menu</a></li>
         <li><a href="#our-story">Our History</a></li>
+        <li><a href="#parties">Parties</a></li>
         <li><a href="#visit">Locations</a></li>
+        <li><a href="es/index.html" hreflang="es" lang="es">Español</a></li>
       </ul>
     </div>
     <p class="copyright">&copy; 2026 Don Perico Mexican &amp; Seafood Restaurant. All rights reserved.</p>
   </footer>
+
+  <nav class="action-bar" aria-label="Quick actions">
+    <a href="https://www.google.com/maps/dir/?api=1&amp;destination=4701+White+Lane+Bakersfield+CA+93313" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
+      Directions
+    </a>
+    <a href="tel:+16618323002">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1Z"/></svg>
+      Call
+    </a>
+    <a href="menu.html">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v2H4zm0 7h16v2H4zm0 7h16v2H4z"/></svg>
+      Menu
+    </a>
+  </nav>
 
   <script src="script.js"></script>
 </body>

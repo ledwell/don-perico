@@ -78,6 +78,10 @@ img {
   height: auto;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 a {
   color: inherit;
 }
@@ -530,6 +534,64 @@ html:not(.js) .nav-toggle {
   }
 }
 
+/* Live status + today's special (filled in by script.js) */
+.hero-live {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.hero-status,
+.hero-today {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  background-color: rgba(15, 12, 31, 0.75);
+  border: 1px solid var(--line-strong);
+  font-size: 0.9rem;
+  font-weight: 600;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.hero-status::before {
+  content: "";
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background-color: var(--muted);
+}
+
+.hero-status.is-open::before {
+  background-color: #4ade80;
+  box-shadow: 0 0 0 4px rgba(74, 222, 128, 0.25);
+}
+
+.hero-today {
+  color: var(--ink);
+  background-color: var(--cream);
+  border-color: var(--cream);
+  text-decoration: none;
+}
+
+.hero-today:hover {
+  background-color: var(--gold-bright);
+}
+
+.hero-today-label {
+  padding: 0.05rem 0.5rem;
+  border-radius: 999px;
+  background-color: var(--red);
+  color: var(--cream);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .hero h1 {
   max-width: 12ch;
   margin-bottom: 1rem;
@@ -742,6 +804,27 @@ html:not(.js) .nav-toggle {
   font-weight: 500;
 }
 
+/* Today's special gets a solid ribbon and a "Today" tag */
+.special.is-today {
+  background-color: var(--accent);
+  color: var(--cream);
+  box-shadow: none;
+}
+
+.special.is-today .special-day {
+  color: var(--cream);
+}
+
+.special.is-today::before {
+  content: attr(data-today-label);
+  margin-bottom: 0.2rem;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
 /* ==========================================================================
    Sunday brunch: the night sky and fireworks from the badge
    ========================================================================== */
@@ -811,6 +894,10 @@ html:not(.js) .nav-toggle {
   line-height: 1;
 }
 
+.brunch-price-long {
+  font-size: clamp(2.2rem, 7vw, 2.75rem);
+}
+
 .brunch-per {
   font-family: var(--font-serif);
   font-size: 1.1rem;
@@ -874,6 +961,51 @@ html:not(.js) .nav-toggle {
   /* badge on the left, text on the right */
   .story-badge {
     order: -1;
+  }
+}
+
+/* ==========================================================================
+   Parties & groups
+   ========================================================================== */
+.parties {
+  padding: clamp(2.5rem, 6vw, 4rem) 0;
+  background-color: var(--cream);
+  color: var(--ink);
+}
+
+.parties-inner {
+  display: grid;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.parties .eyebrow {
+  color: var(--red);
+}
+
+.parties h2 {
+  margin-bottom: 0.75rem;
+}
+
+.parties p:not(.eyebrow) {
+  max-width: 40rem;
+  font-size: 1.05rem;
+}
+
+.parties .btn-primary {
+  justify-self: start;
+  background-color: var(--red);
+  color: var(--cream);
+}
+
+.parties .btn-primary:hover {
+  background-color: var(--ink);
+}
+
+@media (min-width: 800px) {
+  .parties-inner {
+    grid-template-columns: 1fr auto;
+    gap: 3rem;
   }
 }
 
@@ -1301,6 +1433,61 @@ html.menu-page {
 
 .pdf-link {
   white-space: nowrap;
+}
+
+/* ==========================================================================
+   Mobile quick-action bar
+   ========================================================================== */
+.action-bar {
+  position: fixed;
+  inset: auto 0 0;
+  z-index: 90;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-bottom: env(safe-area-inset-bottom);
+  background-color: rgba(15, 12, 31, 0.96);
+  border-top: 1px solid var(--line-strong);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.action-bar a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.6rem 0.5rem;
+  color: var(--text);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+}
+
+.action-bar a:first-child {
+  background-color: var(--gold);
+  color: var(--ink);
+}
+
+.action-bar svg {
+  width: 1.35rem;
+  height: 1.35rem;
+  fill: currentColor;
+}
+
+/* keep the footer clear of the bar */
+body:has(.action-bar) {
+  padding-bottom: calc(4rem + env(safe-area-inset-bottom));
+}
+
+@media (min-width: 900px) {
+  .action-bar {
+    display: none;
+  }
+
+  body:has(.action-bar) {
+    padding-bottom: 0;
+  }
 }
 
 /* ==========================================================================

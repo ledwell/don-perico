@@ -54,3 +54,47 @@ if (chips.length && 'IntersectionObserver' in window) {
 
   document.querySelectorAll('.menu-category').forEach((section) => observer.observe(section));
 }
+
+// Home page: "Open now" status and today's special, based on Bakersfield time
+const OPEN_HOUR = 10;
+const CLOSE_HOUR = 21;
+
+const status = document.querySelector('[data-open-status]');
+const todayLink = document.querySelector('[data-today-link]');
+
+if (status || todayLink) {
+  const parts = Object.fromEntries(
+    new Intl.DateTimeFormat('en-US', {
+      timeZone: 'America/Los_Angeles',
+      weekday: 'short',
+      hour: 'numeric',
+      hourCycle: 'h23',
+    })
+      .formatToParts(new Date())
+      .map((p) => [p.type, p.value])
+  );
+  const day = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(parts.weekday);
+  const hour = Number(parts.hour);
+
+  if (status) {
+    const state = hour < OPEN_HOUR ? 'before' : hour < CLOSE_HOUR ? 'open' : 'after';
+    status.textContent = status.dataset[state];
+    status.classList.add(`is-${state}`);
+    status.hidden = false;
+  }
+
+  // Specials are marked up with data-day (0 = Sunday); reuse their text so translations follow
+  const special = document.querySelector(`[data-day="${day}"]`);
+  if (todayLink && special) {
+    const label = todayLink.querySelector('.hero-today-label').textContent;
+    const text =
+      special.dataset.today ||
+      [...special.querySelectorAll('.special-day, .special-deal')].map((el) => el.textContent).join(': ');
+    todayLink.querySelector('[data-today-text]').textContent = text;
+    todayLink.href = special.getAttribute('href') || `#${special.id}`;
+    todayLink.hidden = false;
+
+    special.classList.add('is-today');
+    special.dataset.todayLabel = label;
+  }
+}
