@@ -520,6 +520,29 @@ html:not(.js) .nav-toggle {
   margin: 0 auto;
 }
 
+/* Header already carries the badge on small screens */
+.hero-logo {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .hero-content {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .hero-logo {
+    display: block;
+    width: clamp(260px, 28vw, 380px);
+  }
+
+  .hero-logo img {
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.6));
+  }
+}
+
 .hero h1 {
   max-width: 12ch;
   margin-bottom: 1rem;
@@ -638,7 +661,7 @@ html:not(.js) .nav-toggle {
    Weekly specials: cream ribbons like the banner in the logo
    ========================================================================== */
 .specials {
-  padding: 1.5rem 0 0.5rem;
+  padding: 0 0 clamp(3.5rem, 8vw, 6rem);
 }
 
 .specials-title {
@@ -792,8 +815,13 @@ html:not(.js) .nav-toggle {
 
 @media (min-width: 800px) {
   .brunch-inner {
-    grid-template-columns: 1.4fr 1fr;
+    grid-template-columns: 1fr 1.4fr;
     gap: 4rem;
+  }
+
+  /* ticket on the left, text on the right */
+  .brunch-ticket {
+    order: -1;
   }
 }
 
@@ -828,8 +856,13 @@ html:not(.js) .nav-toggle {
 
 @media (min-width: 800px) {
   .story-inner {
-    grid-template-columns: 1.4fr 1fr;
+    grid-template-columns: 1fr 1.4fr;
     gap: 4rem;
+  }
+
+  /* badge on the left, text on the right */
+  .story-badge {
+    order: -1;
   }
 }
 

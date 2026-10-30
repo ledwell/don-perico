@@ -38,9 +38,9 @@
     },
     "openingHoursSpecification": [{
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      "opens": "11:00",
-      "closes": "22:00"
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "10:00",
+      "closes": "21:00"
     }],
     "foundingDate": "1998",
     "hasMenu": "menu.html",
@@ -89,39 +89,19 @@
         <img src="images/dining-room.jpg" alt="" width="1600" height="1078" fetchpriority="high">
       </picture>
       <div class="hero-content">
-        <p class="eyebrow">Family-owned since 1998</p>
-        <h1>Proudly serving Bakersfield</h1>
-        <p class="hero-lede">Scratch-made Mexican food, sizzling fajitas, fresh seafood and margaritas on White Lane.</p>
-        <div class="btn-row">
-          <a href="tel:+16615550100" class="btn btn-primary">Order now</a>
-          <a href="#visit" class="btn btn-outline">Learn more</a>
+        <div class="hero-text">
+          <p class="eyebrow">Family-owned since 1998</p>
+          <h1>Proudly serving Bakersfield</h1>
+          <p class="hero-lede">Scratch-made Mexican food, sizzling fajitas, fresh seafood and margaritas on White Lane.</p>
+          <div class="btn-row">
+            <a href="tel:+16615550100" class="btn btn-primary">Order now</a>
+            <a href="#visit" class="btn btn-outline">Learn more</a>
+          </div>
         </div>
-      </div>
-    </section>
-
-    <section id="specials" class="specials" aria-labelledby="specials-title">
-      <div class="container">
-        <h2 id="specials-title" class="specials-title">Weekly specials</h2>
-        <ul class="specials-list">
-          <li>
-            <a class="special special-green" href="menu.html#fajitas">
-              <span class="special-day">Fajita Monday</span>
-              <span class="special-deal">30% off all fajitas</span>
-            </a>
-          </li>
-          <li>
-            <a class="special special-red" href="menu.html#tacos">
-              <span class="special-day">Taco Tuesday</span>
-              <span class="special-deal">4 tacos for $6</span>
-            </a>
-          </li>
-          <li>
-            <a class="special special-blue" href="menu.html#burritos">
-              <span class="special-day">Burrito Thursday</span>
-              <span class="special-deal">Specialty burrito, rice &amp; beans $12 <small>+ tax</small></span>
-            </a>
-          </li>
-        </ul>
+        <picture class="hero-logo">
+          <source srcset="images/logo.webp" type="image/webp">
+          <img src="images/logo.png" alt="" width="640" height="700">
+        </picture>
       </div>
     </section>
 
@@ -184,7 +164,33 @@
       </div>
     </section>
 
-    <!-- TODO: add the buffet price to the ticket, and Sunday opening hours to JSON-LD, once known -->
+    <section id="specials" class="specials" aria-labelledby="specials-title">
+      <div class="container">
+        <h2 id="specials-title" class="specials-title">Weekly specials</h2>
+        <ul class="specials-list">
+          <li>
+            <a class="special special-green" href="menu.html#fajitas">
+              <span class="special-day">Fajita Monday</span>
+              <span class="special-deal">30% off all fajitas</span>
+            </a>
+          </li>
+          <li>
+            <a class="special special-red" href="menu.html#tacos">
+              <span class="special-day">Taco Tuesday</span>
+              <span class="special-deal">4 street tacos for $6</span>
+            </a>
+          </li>
+          <li>
+            <a class="special special-blue" href="menu.html#burritos">
+              <span class="special-day">Burrito Thursday</span>
+              <span class="special-deal">Specialty burrito, rice &amp; beans $12 <small>+ tax</small></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TODO: add the buffet price to the ticket once known -->
     <section id="brunch" class="brunch" aria-labelledby="brunch-title">
       <div class="container brunch-inner">
         <div class="brunch-text">
@@ -259,7 +265,7 @@
               </div>
               <div>
                 <dt>Hours</dt>
-                <dd>Mon–Sat: 11am – 10pm<br>Sunday: Brunch buffet all day, full menu available</dd>
+                <dd>Open every day: 10am – 9pm<br>Sunday brunch buffet all day, full menu available</dd>
               </div>
               <div>
                 <dt>Phone</dt>
@@ -286,7 +292,7 @@
       <div>
         <p class="footer-name">Don Perico Mexican &amp; Seafood Restaurant</p>
         <p>4701 White Lane, Bakersfield, CA 93313 · <a href="tel:+16615550100">(661) 555-0100</a></p>
-        <p>Mon–Sat 11am – 10pm · Sunday brunch buffet all day</p>
+        <p>Open every day 10am – 9pm · Sunday brunch buffet all day</p>
       </div>
       <ul class="footer-links">
         <li><a href="menu.html">Menu</a></li>
