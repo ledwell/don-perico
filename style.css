@@ -1096,7 +1096,7 @@ html:not(.js) .nav-toggle {
    Visit
    ========================================================================== */
 .visit {
-  background-color: var(--surface);
+  background-color: var(--bg);
   border-top: 1px solid var(--line);
 }
 
