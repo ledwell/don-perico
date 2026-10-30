@@ -441,7 +441,7 @@ html:not(.js) .nav-toggle {
     grid-column: 1 / -1;
     display: flex;
     justify-content: center;
-    gap: 2.5rem;
+    gap: clamp(1rem, 2.4vw, 2.5rem);
     height: 2.25rem;
     align-items: center;
     background-color: var(--cream);
@@ -451,7 +451,8 @@ html:not(.js) .nav-toggle {
   .nav-secondary a {
     padding: 0.25rem 0;
     color: var(--ink);
-    font-size: 0.9rem;
+    font-size: clamp(0.78rem, 1.1vw, 0.9rem);
+    white-space: nowrap;
   }
 
   .nav-secondary a:hover {
@@ -469,6 +470,13 @@ html:not(.js) .nav-toggle {
   /* papel picado sits under the cream bar */
   .site-header::after {
     grid-row: 3;
+  }
+}
+
+/* Narrow desktops: drop the number from the takeout link so the bar fits on one line */
+@media (min-width: 900px) and (max-width: 1199px) {
+  .nav-secondary .nav-phone {
+    display: none;
   }
 }
 
@@ -961,6 +969,81 @@ html:not(.js) .nav-toggle {
   /* badge on the left, text on the right */
   .story-badge {
     order: -1;
+  }
+}
+
+/* ==========================================================================
+   Catering
+   ========================================================================== */
+.catering {
+  background-color: var(--surface);
+  border-top: 1px solid var(--line);
+}
+
+.catering-inner {
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.catering-img img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+.catering-text h2 {
+  margin-bottom: 1.25rem;
+}
+
+.catering-text p:not(.eyebrow) {
+  max-width: 36rem;
+  color: var(--text-soft);
+  font-size: 1.05rem;
+}
+
+.catering-list {
+  display: grid;
+  gap: 0.6rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.catering-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/* parrot-colored bullets */
+.catering-list li::before {
+  content: "";
+  flex-shrink: 0;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background-color: var(--red);
+}
+
+.catering-list li:nth-child(2)::before { background-color: var(--gold); }
+.catering-list li:nth-child(3)::before { background-color: var(--green); }
+.catering-list li:nth-child(4)::before { background-color: var(--blue); }
+
+@media (min-width: 600px) {
+  .catering-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem 1.5rem;
+  }
+}
+
+@media (min-width: 800px) {
+  .catering-inner {
+    grid-template-columns: 1fr 1.1fr;
+    gap: 4rem;
   }
 }
 
