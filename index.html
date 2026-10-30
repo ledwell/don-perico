@@ -3,110 +3,250 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Perico's Cantina & Grill - Authentic Mexican Restaurant</title>
-  <link rel="icon" href="images/pcg-icon.png" type="image/png">
+  <title>Don Perico Mexican &amp; Seafood Restaurant | Mexican Restaurant in Bakersfield, CA</title>
+  <meta name="description" content="Family-owned Mexican &amp; seafood restaurant on White Lane in Bakersfield since 1998. Fajitas, chile colorado, seafood, margaritas and over 120 dishes made from scratch.">
+  <meta name="theme-color" content="#16122b">
+
+  <meta property="og:type" content="restaurant">
+  <meta property="og:title" content="Don Perico Mexican &amp; Seafood Restaurant">
+  <meta property="og:description" content="Family-owned Mexican &amp; seafood restaurant in Bakersfield since 1998.">
+  <meta property="og:image" content="images/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@500;700&family=Inter:wght@400;500;600;700&family=Rye&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Don Perico Mexican & Seafood Restaurant",
+    "servesCuisine": ["Mexican", "Seafood"],
+    "priceRange": "$$",
+    "telephone": "+1-661-555-0100",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "4701 White Lane",
+      "addressLocality": "Bakersfield",
+      "addressRegion": "CA",
+      "postalCode": "93313",
+      "addressCountry": "US"
+    },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "11:00",
+      "closes": "22:00"
+    }],
+    "foundingDate": "1998",
+    "hasMenu": "menu.html",
+    "image": "images/og-image.jpg"
+  }
+  </script>
 </head>
 <body>
-  <div class="sticky-wrapper">
-    <header class="main-header">
-      <div class="logo">
-        <picture>
-          <source srcset="images/pcg-logo.png" media="(max-width: 1200px)">
-          <source srcset="images/pcg-logo-txt-sideways-2.png" media="(min-width: 1201px)">
-          <img src="images/pcg-logo.png" alt="PCG">
-        </picture>
-      </div>
-      <nav class="site-nav">
-        <ul>
-          <li><a href="#home">MENU</a></li>
-          <li><a href="#services">OFFERS</a></li>
-          <li><a href="#contact">LOCATIONS</a></li>
-          <li><a href="#about">CATERING</a></li>
-        </ul>
-      </nav>
-    </header>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <nav class="sub-nav">
-      <ul>
-        <li><a href="#pricing">OUR HISTORY</a></li>
-        <li><a href="#about">ORDER TAKEOUT</a></li>
-        <li><a href="#blog">DOWNLOAD OUR APP</a></li>
+  <!-- TODO: replace placeholder phone (661) 555-0100 everywhere (index.html, menu.html, JSON-LD) -->
+  <header class="site-header">
+    <a class="logo" href="index.html" aria-label="Don Perico Mexican &amp; Seafood Restaurant home">
+      <picture>
+        <source srcset="images/logo-sm.webp" type="image/webp">
+        <img src="images/logo-sm.png" alt="" width="200" height="219">
+      </picture>
+      <span class="logo-text">
+        <span class="logo-name">Don Perico</span>
+        <span class="logo-tag">Mexican &amp; Seafood Restaurant</span>
+      </span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">
+      <span class="nav-toggle-bar"></span>
+    </button>
+
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ul class="nav-primary">
+        <li><a href="menu.html">MENU</a></li>
+        <li><a href="#visit">LOCATIONS</a></li>
+      </ul>
+      <ul class="nav-secondary">
+        <li><a href="#our-story">OUR HISTORY</a></li>
+        <li><a href="tel:+16615550100">ORDER TAKEOUT <span class="nav-phone">(661) 555-0100</span></a></li>
       </ul>
     </nav>
-  </div>
+  </header>
 
-  <main>
-    <section class="hero-section">
+  <main id="main">
+    <section class="hero">
+      <picture class="hero-bg">
+        <source srcset="images/dining-room.webp" type="image/webp">
+        <img src="images/dining-room.jpg" alt="" width="1600" height="1078" fetchpriority="high">
+      </picture>
       <div class="hero-content">
-        <h1>PROUDLY SERVING BAKERSFIELD</h1>
-        <div class="hero-buttons">
-          <a href="#get-started" class="btn primary">ORDER NOW</a>
-          <a href="#learn-more" class="btn secondary">LEARN MORE</a>
+        <p class="eyebrow">Family-owned since 1998</p>
+        <h1>Proudly serving Bakersfield</h1>
+        <p class="hero-lede">Scratch-made Mexican food, sizzling fajitas, fresh seafood and margaritas on White Lane.</p>
+        <div class="btn-row">
+          <a href="tel:+16615550100" class="btn btn-primary">Order now</a>
+          <a href="#visit" class="btn btn-outline">Learn more</a>
         </div>
       </div>
     </section>
 
-    <section class="container section-menu">
-      <h2>GUEST FAVORITES</h2>
-      <div class="menu-items">
-        <div class="menu-item">
-          <div class="menu-item-img-container">
-            <img class="menu-item-img" src="images/fajitas.png" alt="Fajitas">
-          </div>
-          <h3>Fajitas</h3>
-          <p>Marinated, char-grilled steak or chicken tossed with vibrant peppers and onions, for a flavor-packed fiesta in every bite.</p>
+    <section class="section favorites" aria-labelledby="favorites-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Guest favorites</p>
+          <h2 id="favorites-title">What everyone orders</h2>
         </div>
-        <div class="menu-item">
-          <div class="menu-item-img-container">
-            <img class="menu-item-img" src="images/food.jpg" alt="Chili Colorado">
-          </div>
-          <h3>Chili Colorado</h3>
-          <p>Bold, mouthwatering Chili Colorado beef bathed in a rich, smoky red-chile sauce that ignites your taste buds.</p>
-        </div>
-        <div class="menu-item">
-          <div class="menu-item-img-container">
-            <img class="menu-item-img" src="images/enchiladas.jpg" alt="Enchiladas">
-          </div>
-          <h3>Cheese Enchiladas</h3>
-          <p>Creamy enchiladas-corn tortillas with melted jack and queso fresco, red-chile sauce and baked until bubbly and golden.</p>
-        </div>
-      </div>
-    </section>
-    
-    <section class="container menu-cta">
-      <div class="menu-items">
-        <div class="menu-item">
-          <h2>Over 120 authentic Mexican dishes, freshly prepared and from scratch, to order, every day.</h2>
-          <div class="cta-buttons">
-            <a href="#get-started" class="btn primary-cta">
-              EXPLORE OUR MENU
-              <div class="long-arrow"></div>
+        <ul class="card-grid">
+          <li>
+            <a class="dish-card" href="menu.html#fajitas">
+              <picture>
+                <source srcset="images/fajitas.webp" type="image/webp">
+                <img src="images/fajitas.jpg" alt="Steak and shrimp fajitas on a cast-iron skillet with lemon" width="720" height="389" loading="lazy">
+              </picture>
+              <div class="dish-card-body">
+                <h3>Fajitas <span class="price">from 17.50</span></h3>
+                <p>Marinated, char-grilled steak or chicken with peppers and onions, served sizzling.</p>
+              </div>
             </a>
-            
-          </div>
-        </div>
-        <div class="menu-item">
-          <div class="menu-item-img-container-cta">
-            <img class="menu-item-img" src="images/fajitas-2.jpg" alt="Delicious Mexican Food">
-          </div>
-        </div>
+          </li>
+          <li>
+            <a class="dish-card" href="menu.html#chile-colorado">
+              <picture>
+                <source srcset="images/chile-colorado.webp" type="image/webp">
+                <img src="images/chile-colorado.jpg" alt="Chile colorado with rice and refried beans" width="1000" height="835" loading="lazy">
+              </picture>
+              <div class="dish-card-body">
+                <h3>Chile Colorado <span class="price">18.95</span></h3>
+                <p>Chunks of steak simmered in a rich, smoky red-chile sauce.</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a class="dish-card" href="menu.html#two-enchiladas">
+              <picture>
+                <source srcset="images/enchiladas.webp" type="image/webp">
+                <img src="images/enchiladas.jpg" alt="Cheese enchiladas in red sauce with rice and beans" width="1000" height="750" loading="lazy">
+              </picture>
+              <div class="dish-card-body">
+                <h3>Cheese Enchiladas <span class="price">15.95</span></h3>
+                <p>Corn tortillas with melted cheese and red-chile sauce, baked until bubbly.</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a class="dish-card" href="menu.html#burrito-ranchero">
+              <picture>
+                <source srcset="images/burrito-ranchero.webp" type="image/webp">
+                <img src="images/burrito-ranchero.jpg" alt="Smothered burrito with guacamole and pico de gallo" width="1169" height="812" loading="lazy">
+              </picture>
+              <div class="dish-card-body">
+                <h3>Burrito Ranchero <span class="price">16.95</span></h3>
+                <p>Shredded beef or chicken, smothered in ranchera sauce and melted cheese.</p>
+              </div>
+            </a>
+          </li>
+        </ul>
       </div>
     </section>
 
-    <section class="container section about">
-      <h2>About Us</h2>
-      <p>Family-owned and operated since 1998 and formerly known as Don Perico's Restaurant, Perico's Cantina & Grill brings the warmth of mexican home cooking to your table.</p>
-      <p><strong>Location:</strong> 4701 White Lane Bakersfield, CA 93313</p>
-      <p><strong>Hours:</strong> Mon-Sat, 11am-10pm</p>
+    <section class="menu-cta" aria-labelledby="menu-cta-title">
+      <div class="container menu-cta-inner">
+        <div class="menu-cta-text">
+          <h2 id="menu-cta-title">Over 120 authentic Mexican dishes, made from scratch, to order, every day.</h2>
+          <a href="menu.html" class="btn-arrow">Explore our menu <span class="long-arrow" aria-hidden="true"></span></a>
+        </div>
+        <picture class="menu-cta-img">
+          <source srcset="images/tacos-asada.webp" type="image/webp">
+          <img src="images/tacos-asada.jpg" alt="Two carne asada tacos with rice and beans" width="954" height="784" loading="lazy">
+        </picture>
+      </div>
+    </section>
+
+    <section id="our-story" class="section story" aria-labelledby="story-title">
+      <div class="container story-inner">
+        <div class="story-text">
+          <p class="eyebrow">Our story</p>
+          <h2 id="story-title">A Bakersfield tradition since 1998</h2>
+          <p>Don Perico Mexican &amp; Seafood Restaurant has been family-owned and operated on White Lane since 1998.</p>
+          <p>We still make everything from scratch and to order, from sizzling fajitas to fresh seafood, and we still bring the warmth of Mexican home cooking to your table.</p>
+        </div>
+        <figure class="story-badge">
+          <picture>
+            <source srcset="images/logo.webp" type="image/webp">
+            <img src="images/logo.png" alt="Don Perico Mexican &amp; Seafood Restaurant logo: a parrot with a margarita above riders on horseback before a mission church under fireworks" width="640" height="700" loading="lazy">
+          </picture>
+        </figure>
+      </div>
+    </section>
+
+    <section id="visit" class="section visit" aria-labelledby="visit-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Visit us</p>
+          <h2 id="visit-title">Come hungry</h2>
+        </div>
+        <div class="visit-grid">
+          <figure class="visit-photo">
+            <picture>
+              <source srcset="images/building.webp" type="image/webp">
+              <img src="images/building.jpg" alt="The restaurant's exterior on White Lane with the Don Perico sign" width="1200" height="800" loading="lazy">
+            </picture>
+            <figcaption>Look for the <strong>Don Perico</strong> sign on White Lane.</figcaption>
+          </figure>
+
+          <div class="visit-info">
+            <dl>
+              <div>
+                <dt>Address</dt>
+                <dd>4701 White Lane<br>Bakersfield, CA 93313</dd>
+              </div>
+              <div>
+                <dt>Hours</dt>
+                <dd>Mon–Sat: 11am – 10pm<br>Sunday: Closed</dd>
+              </div>
+              <div>
+                <dt>Phone</dt>
+                <dd><a href="tel:+16615550100">(661) 555-0100</a></dd>
+              </div>
+            </dl>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&amp;destination=4701+White+Lane+Bakersfield+CA+93313" target="_blank" rel="noopener">Get directions</a>
+              <a class="btn btn-outline" href="tel:+16615550100">Call to order</a>
+            </div>
+          </div>
+
+          <div class="visit-map">
+            <iframe title="Map to Don Perico Mexican &amp; Seafood Restaurant" src="https://www.google.com/maps?q=4701+White+Lane,+Bakersfield,+CA+93313&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2025 Perico's Cantina & Grill. All rights reserved.</p>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <img class="footer-logo" src="images/logo-sm.png" alt="" width="200" height="219" loading="lazy">
+      <div>
+        <p class="footer-name">Don Perico Mexican &amp; Seafood Restaurant</p>
+        <p>4701 White Lane, Bakersfield, CA 93313 · <a href="tel:+16615550100">(661) 555-0100</a></p>
+        <p>Mon–Sat 11am – 10pm</p>
+      </div>
+      <ul class="footer-links">
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="#our-story">Our History</a></li>
+        <li><a href="#visit">Locations</a></li>
+      </ul>
     </div>
+    <p class="copyright">&copy; 2026 Don Perico Mexican &amp; Seafood Restaurant. All rights reserved.</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
