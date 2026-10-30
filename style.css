@@ -1477,6 +1477,24 @@ html.menu-page {
   vertical-align: 0.2em;
 }
 
+/* Little perico badge in front of favorite dishes (and the legend) */
+.item-head h3:has(.fav)::before,
+.menu-legend::before {
+  content: "";
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  margin-right: 0.4rem;
+  border-radius: 50%;
+  background: var(--cream) url("images/favicon.png") center / cover no-repeat;
+  box-shadow: 0 0 0 2px var(--gold);
+  vertical-align: middle;
+}
+
+.menu-legend::before {
+  margin-right: 0.1rem;
+}
+
 /* Compact price lists (quesadillas, sides, a la carta) */
 .price-list {
   display: grid;
