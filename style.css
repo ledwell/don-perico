@@ -930,6 +930,11 @@ html:not(.js) .nav-toggle {
 /* ==========================================================================
    Our story
    ========================================================================== */
+.story {
+  background-color: var(--surface);
+  border-top: 1px solid var(--line);
+}
+
 .story-inner {
   display: grid;
   gap: 2.5rem;
@@ -972,8 +977,7 @@ html:not(.js) .nav-toggle {
    Catering
    ========================================================================== */
 .catering {
-  background-color: var(--surface);
-  border-top: 1px solid var(--line);
+  background-color: var(--bg);
 }
 
 .catering-inner {
