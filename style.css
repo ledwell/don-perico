@@ -1537,62 +1537,6 @@ html.menu-page {
   font-size: 0.95rem;
 }
 
-
-/* ==========================================================================
-   Mobile quick-action bar
-   ========================================================================== */
-.action-bar {
-  position: fixed;
-  inset: auto 0 0;
-  z-index: 90;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  padding-bottom: env(safe-area-inset-bottom);
-  background-color: rgba(15, 12, 31, 0.96);
-  border-top: 1px solid var(--line-strong);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-.action-bar a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.2rem;
-  padding: 0.6rem 0.5rem;
-  color: var(--text);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-decoration: none;
-}
-
-.action-bar a:first-child {
-  background-color: var(--gold);
-  color: var(--ink);
-}
-
-.action-bar svg {
-  width: 1.35rem;
-  height: 1.35rem;
-  fill: currentColor;
-}
-
-/* keep the footer clear of the bar */
-body:has(.action-bar) {
-  padding-bottom: calc(4rem + env(safe-area-inset-bottom));
-}
-
-@media (min-width: 900px) {
-  .action-bar {
-    display: none;
-  }
-
-  body:has(.action-bar) {
-    padding-bottom: 0;
-  }
-}
-
 /* ==========================================================================
    Motion preferences
    ========================================================================== */
